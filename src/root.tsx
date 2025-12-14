@@ -1,7 +1,6 @@
-import { render } from "solid-js/web";
+import { createRoot } from "react-dom/client";
 import Atlas from "./atlas";
 
-render(
-	() => <Atlas />,
-	document.querySelector("#atlas-root") as HTMLDivElement,
+createRoot(document.querySelector("#atlas-root") as HTMLDivElement).render(
+	<Atlas />,
 );
