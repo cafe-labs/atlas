@@ -1,12 +1,23 @@
 {
-  "name": "atlasos",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+	"name": "atlasos",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "bun --bun vite dev",
+		"build": "bun --bun vite build"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.18",
+		"solid-js": "^1.9.10",
+		"tailwindcss": "^4.1.18",
+		"vite": "^7.2.7",
+		"vite-plugin-solid": "^2.11.10"
+	}
 }
