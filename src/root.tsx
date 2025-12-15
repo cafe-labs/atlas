@@ -1,6 +1,8 @@
-import { createRoot } from "react-dom/client";
-import Atlas from "./atlas";
+import { createRoot } from 'react-dom/client'
+import Atlas from './atlas'
 
-createRoot(document.querySelector("#atlas-root") as HTMLDivElement).render(
-	<Atlas />,
-);
+import './styles.css'
+
+createRoot(document.querySelector('#atlas-root') as HTMLDivElement).render(
+	<Atlas />
+)

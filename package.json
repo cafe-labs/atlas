@@ -5,7 +5,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "bun --bun vite dev",
-		"build": "bun --bun vite build"
+		"build": "bun --bun vite build",
+		"check": "biome check --write"
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
@@ -16,8 +17,12 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
+		"@nanostores/react": "^1.0.0",
 		"@tailwindcss/vite": "^4.1.18",
 		"@vitejs/plugin-react": "^5.1.2",
+		"clsx": "^2.1.1",
+		"interactjs": "^1.10.27",
+		"nanostores": "^1.1.0",
 		"react": "^19.2.3",
 		"react-dom": "^19.2.3",
 		"tailwindcss": "^4.1.18",
