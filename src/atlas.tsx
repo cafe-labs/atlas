@@ -1,13 +1,19 @@
-import { useStore } from '@nanostores/react'
+import { createContext } from 'react'
+import { AtlasDesktop } from './core/desktop'
 import { AtlasWindowManager } from './core/wm'
 
 export const Atlas = {
-	wm: new AtlasWindowManager()
+	wm: new AtlasWindowManager(),
+	desktop: new AtlasDesktop()
 }
 
 Atlas.wm.createWindow(100, 100)
 
-export default function () {
-	const windows = useStore(Atlas.wm.getWindowStore())
-	return <div className="relative">{windows.map((win) => win.render())}</div>
+export default () => {
+	// const AtlasContext = createContext(Atlas)
+	return (
+		// <AtlasContext value={Atlas}>
+			<Atlas.desktop.render />
+		// </AtlasContext>
+	)
 }

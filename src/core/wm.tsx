@@ -10,11 +10,14 @@ class AtlasWindow {
 		y: 0
 	})
 
-	constructor(x: number, y: number) {
+	public readonly id: string
+
+	constructor(x: number, y: number, id: string) {
 		this.$coordinates.set({ x, y })
+		this.id = id
 	}
 
-	public move({ x, y }: { x?: number; y?: number }) {
+	public move = ({ x, y }: { x?: number; y?: number }) => {
 		if (x) {
 			this.$coordinates.set({
 				...this.$coordinates.get(),
@@ -30,17 +33,19 @@ class AtlasWindow {
 		}
 	}
 
-	public render() {
+	public render = () => {
 		const coordinates = useStore(this.$coordinates)
 		const titlebarRef = useRef<HTMLDivElement>(null)
 
 		useEffect(() => {
-			const that = this
 			if (!titlebarRef.current) return
+
+			const thisWin = this
+
 			interact(titlebarRef.current).draggable({
 				listeners: {
 					move(event: { dx: number; dy: number }) {
-						that.move({
+						thisWin.move({
 							x: coordinates.x + event.dx,
 							y: coordinates.y + event.dy
 						})
@@ -79,7 +84,7 @@ class AtlasWindowManager {
 	createWindow(x: number, y: number) {
 		this.$activeWindows.set([
 			...this.$activeWindows.get(),
-			new AtlasWindow(x, y)
+			new AtlasWindow(x, y, '1')
 		])
 	}
 
