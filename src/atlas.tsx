@@ -10,10 +10,10 @@ export const Atlas = {
 Atlas.wm.createWindow(100, 100)
 
 export default () => {
-	// const AtlasContext = createContext(Atlas)
+	const AtlasContext = createContext(Atlas)
 	return (
-		// <AtlasContext value={Atlas}>
+		<AtlasContext value={Atlas}>
 			<Atlas.desktop.render />
-		// </AtlasContext>
+		</AtlasContext>
 	)
 }
